@@ -1,15 +1,13 @@
 import express from "express";
 import dotenv from "dotenv";
-import mongoose from "mongoose";
 import { authRouter } from "./route/auth.route.js";
+import connectDB from "./config/db.config.js";
 
 dotenv.config();
 const PORT = process.env.PORT;
-const mongoString = process.env.CONNECTION_STRING;
 
 const app = express();
-mongoose.connect(mongoString);
-const database = mongoose.connection;
+connectDB();
 
 app.use(express.json());
 app.use("/auth", authRouter);
