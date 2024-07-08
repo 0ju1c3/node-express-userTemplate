@@ -1,1 +1,1 @@
-Using : node express commonjs mongoose mongodb jwt
+Using : node express es6 mongoose mongodb jwt
