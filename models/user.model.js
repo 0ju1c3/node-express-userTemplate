@@ -22,7 +22,7 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
-userSchema.method.comparePassword = (userPassword) => {
+userSchema.methods.comparePassword = (userPassword) => {
   return bcrypt.compare(userPassword, this.password);
 };
 
