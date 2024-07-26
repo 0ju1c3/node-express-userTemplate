@@ -7,5 +7,4 @@ import {
 export const authRouter = express.Router();
 
 authRouter.post("/signup", SignUpController);
-
 authRouter.post("/login", LoginController);

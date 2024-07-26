@@ -28,3 +28,14 @@ export const LoginController = async (req, res) => {
     console.log(error);
   }
 };
+
+export const ProfileController = async (req, res) => {
+  try {
+    const userId = req.params.id;
+    console.log(userId);
+    const userInfo = await User.findById(userId);
+    res.status(200).json({ userInfo });
+  } catch (err) {
+    return res.status(400).json({ message: "Error getting user info" });
+  }
+};
